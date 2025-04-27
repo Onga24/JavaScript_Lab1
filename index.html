@@ -1,0 +1,30 @@
+<!-- 1-Create your first html file that contains any html tags. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Lab1</title>
+   
+</head>
+<body>
+    <h1>JavaScript Lab1</h1>    
+<!-- b- Create another internal script before external script in html
+and print the value of number1 -->
+    <script>
+        console.log("internal script before external ===> number1:", typeof number1, number1);
+    </script> 
+
+<!-- c- Now add another internal script after external.js script in
+html file and print the same value? -->
+
+<script src="External.js"></script>    
+<script>
+    console.log("internal script after external =====> number1:", number1);
+</script>
+
+<script src="functionsScript.js"></script>
+<script src="ConsumingScript.js"></script>
+
+</body>
+</html>
