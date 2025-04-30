@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Manipulation Lab</title>
+    <script>
+        let smallWindow;
+        
+        function openSmallWindow() {
+            smallWindow = window.open("", "smallWin", "width=400,height=300");
+            smallWindow.document.write("<h1>Small Window</h1>");
+            smallWindow.document.write("<div style='height:2000px'>Scrollable content<br><br><br><br>Bottom of content</div>");
+            smallWindow.document.reload();
+            smallWindow.document.write(`mohamed onga`);
+            // Add script to check scrolling
+            // smallWindow.document.write(`<script>
+            //     `)
+            smallWindow.document.write(`
+                <script>
+                    window.addEventListener('scroll', function() {
+                        const tolerance = 5;
+                        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - tolerance) {
+                            window.close();
+                        }
+                    });
+                    // Also check on load in case content is already at bottom
+                    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5) {
+                        window.close();
+                    }
+                <\/script>
+            `);
+        }
+    </script>
+</head>
+<body>
+    <h1>Main Window</h1>
+    <script>openSmallWindow()</script>
+    
+   
+</body>
+</html>
