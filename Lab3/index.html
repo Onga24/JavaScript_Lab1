@@ -1,40 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Window Manipulation Lab</title>
+    <style>
+        table { border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+    <title>Lab4</title>
+    <!-- 4- Display the date with time on the document title
+        (document.title) which changed every second to show time with date.
+        Note: use .toLocalString() method of the Date Object 
+    -->
     <script>
-        let smallWindow;
+        function updateTitle() {
+            const d = new Date();
+            document.title = d.toLocaleString(); 
+            //console.log(d.toLocaleString());
+            
+        }
+        updateTitle();
+        setInterval(updateTitle, 1000);
+    </script>
+    <script>
         
+        let smallWindow;
         function openSmallWindow() {
-            smallWindow = window.open("", "smallWin", "width=400,height=300");
+            smallWindow = window.open("", "small window", "width=400,height=300");
             smallWindow.document.write("<h1>Small Window</h1>");
+            smallWindow.document.write(`Mohamed Onga`);
             smallWindow.document.write("<div style='height:2000px'>Scrollable content<br><br><br><br>Bottom of content</div>");
-            smallWindow.document.reload();
-            smallWindow.document.write(`mohamed onga`);
-            // Add script to check scrolling
-            // smallWindow.document.write(`<script>
-            //     `)
+            
             smallWindow.document.write(`
                 <script>
-                    window.addEventListener('scroll', function() {
-                        const tolerance = 5;
-                        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - tolerance) {
-                            window.close();
-                        }
-                    });
-                    // Also check on load in case content is already at bottom
-                    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 5) {
+                window.addEventListener('scroll', function() {
+                    // Check if user has scrolled to the bottom
+                    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
                         window.close();
                     }
-                <\/script>
+                        
+                });
+            <\/script>
             `);
         }
     </script>
 </head>
 <body>
+    <script>
+        //a- Find all images in page by two ways (document default collection and document methods)
+        //1.Method_1:document.images:- 
+        const imagesCollection = document.images;
+        console.log(imagesCollection);
+
+        for (let i = 1; i <= imagesCollection.length; i++) {
+        console.log(`Image ${i}:`, imagesCollection[i-1].src, imagesCollection[i].alt);
+        }
+        //2.Method_2:document.querySelectorAll:-
+        const imagesNodeList = document.querySelectorAll("img");
+        for (let i = 0; i < imagesNodeList.length; i++) {
+        console.log(`Image ${i+1}:`, imagesNodeList[i].src, imagesNodeList[i].alt);
+        }
+        console.log(imagesNodeList);
+        
+    </script>
+   
     <h1>Main Window</h1>
     <script>openSmallWindow()</script>
     
-   
+    <img src="image1.png" alt="First_image" class="gallery-img">
+    <img src="image2.png" alt="Sec_image" id="logo">
+    
+
+    <!-- b- Find all options for City drop down list. -->
+    <select id="city" name="city">
+        <option value="">-- Select City --</option>
+        <option value="cairo">Cairo</option>
+        <option value="suez">Suez</option>
+        <option value="giza">Giza</option>
+    </select>
+    <script>
+        const cityDropdown = document.getElementById('city');
+        const opts1 = cityDropdown.options;
+        console.log(opts1);
+        
+        for (let i = 0; i < opts1.length; i++) {
+            console.log(`Option ${i+1}:`, opts1[i].value, "-", opts1[i].text);
+        }
+    </script>
+    <!-- c- Find all rows(tds) for second table in page. -->
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mohamed</td>
+                <td>51</td>
+                <td>OS</td>
+            </tr>
+            <tr>
+                <td>Ahmed</td>
+                <td>20</td>
+                <td>os</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        
+        const Table = document.getElementsByClassName("data-table")[0];
+        console.log(Table);
+        const td = Table.querySelectorAll("td");
+        console.log(td);
+            for (let i = 0; i < td.length; i++) {
+                console.log(`td ${i+1}:`, td[i].innerText);
+            }
+    </script>
+   <!-- d- Find all elements that contain class name fontBlue and BGrey -->
+   <script>
+    const color_elem = document.querySelectorAll('.fontBlue.BGrey');
+    console.log(color_elem);
+    
+    for (let i = 0; i < color_elem.length; i++) {
+        // Use textContent instead of .text
+        console.log(`color_elem ${i+1}:`, color_elem[i].textContent);
+        
+        // If you need the class list:
+        console.log('Classes:', color_elem[i].classList);
+    }
+  </script>
+    <!-- 3- Using location Object with simple HTML Form Page
+        With get method, after clicking submit button show the
+        Name and Age on page console as an object  
+    -->
+   <form id="form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" required><br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+<script>
+    let loginForm = document.getElementById("form");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let username = document.getElementById("name");
+  let age = document.getElementById("age");
+
+  if (username.value == "" || age.value == "") {
+    alert("Ensure you input a value in both fields!");
+  } else {
+    
+    //alert("This form has been successfully submitted!");
+    console.log(
+      `Username: ${username.value} Age: ${age.value}`
+    );
+
+    username.value = "";
+    age.value = "";
+  }
+});
+
+</script>
+
 </body>
 </html>
