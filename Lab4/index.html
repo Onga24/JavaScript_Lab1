@@ -3,9 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <style height: ;></style>
+    <div class="slideshow">
+        <!-- Slides Show-->
+        <h1>Slides Show</h1>
+        <div class="slide active">
+            <img src="image1.png" alt="pic1" >
+        </div>
+        
+        <div class="slide">
+            <img src="image2.png" alt="pic2" >
+        </div>
+        
+        <div class="slide">
+            <img src="image3.png" alt="pic3" >
+        </div>
+        
+        <div class="slide">
+            <img src="image4.png" alt="pic4" >
+        </div>
+        <div class="slide">
+            <img src="image5.png" alt="pic5" >
+        </div>
+        
+      
+        <div class="controls">
+            <button id="prevBtn" disabled>Previous</button>
+            <button id="stopBtn">Stop Slideshow</button>
+            <button id="startBtn">Start Slideshow</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+    <script src="External.js"></script>
+    <!-- Complete the Student form demo to achieve the following
+        requirements.
+        All validations should be with error messages not alerts
+        1- StudentName should not be empty, should not be repeated in table and
+        always added to the table with first letter capitalized.
+        2- StudentGrade should be between 0:100 and use input text not number
+        3- Add filter dropDown List to filter table by Failed students (Grade<60) and
+        success students (Grade>60)
+        4- Add Sort dropDown List to sort table by Name or by Grade -->
+        <h1>Student Management System</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter student name">
+                <div id="nameError" class="error"></div>
+            </div>
+            
+            <div class="control-group">
+                <label for="studentGrade">Student Grade (0-100):</label>
+                <input type="text" id="studentGrade" placeholder="Enter grade">
+                <div id="gradeError" class="error"></div>
+            </div>
+            
+            <div class="control-group">
+                <label for="department">Department:</label>
+                <select id="department">
+                    <option value="OS">OS</option>
+                    <option value="EL">EL</option>
+                    <option value="SD">SD</option>
+                </select>
+            </div>
+            
+            <button id="addStudent">Add Student</button>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="filter">Filter by:</label>
+                <select id="filter">
+                    <option value="all">All Students</option>
+                    <option value="passed">Passed (≥60)</option>
+                    <option value="failed">Failed (<60)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="name">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="grade">Grade (High-Low)</option>
+                    <option value="grade-desc">Grade (Low-High)</option>
+                </select>
+            </div>
+        </div>
+        
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student Grade</th>
+                    <th>Department</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            </tbody>
+        </table> <BR><BR>  </BR></BR>
+         <h1>To-Do List</h1>
     
+         <div>
+             <input type="text" id="taskInput" placeholder="Add a new task...">
+             <button id="addBtn">Add Task</button>
+         </div>
+         
+         <table id="todoTable">
+             <thead>
+                 <tr>
+                     <th>Done</th>
+                     <th class="task-cell">Task</th>
+                     <th>Delete</th>
+                 </tr>
+             </thead>
+             <tbody id="todoBody">
+            </tbody>
+             
+         </table>
+     
+         
 </body>
 </html>

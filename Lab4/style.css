@@ -1,0 +1,114 @@
+.slideshow-container {
+    position: relative;
+    width:800;
+    height:400;
+    margin: auto;
+}
+.slide {
+    display: none;
+}
+.slide.active {
+    display: block;
+}
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px; 
+}
+button:hover {
+    background-color: rgb(0, 132, 255);
+}
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.high-grade {
+    background-color: #3bc03b; /* Green */
+}
+
+.medium-grade {
+    background-color: #3885d3; /* Blue */
+}
+
+.low-grade {
+    background-color: #7e2121; 
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+select, input {
+    padding: 5px;
+}
+#taskInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#addBtn {
+    background-color: #5e2d72;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#addBtn:hover {
+    background-color: #1a1249;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-cell {
+    width: 60%;
+}
