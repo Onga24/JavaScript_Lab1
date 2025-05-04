@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="excute.js"></script>    
+</head>
+<body>
+    
+   
+    <script>
+    
+        document.body.style.position = 'relative';
+        document.body.style.height = '500px';
+        document.body.style.overflow = 'hidden';
+        
+        
+        const mycar = new car(120, 70, 'car-image.png');
+        mycar.changeStyle({
+          width: '500px',
+          height: 'auto',
+          transition: 'left 0.1s ease-out' 
+        });
+        
+        
+        const control = document.createElement('div');
+        
+        document.body.appendChild(control);
+        
+        const countdisplay = document.createElement('div');
+        countdisplay.textContent = `Total cars: ${engine.getCount()}`;
+        document.body.appendChild(countdisplay);
+    
+    </script>
+</body>
+</html>
+
