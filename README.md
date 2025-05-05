@@ -123,3 +123,54 @@ Note : Every logical Error seen will cost you -5 grades (so test your code
 carefully)
 BONUS:
 To Do List
+
+# JavaScript_Lab5
+
+Using ES6 create Class Engine with source property (Abstract class) and has private
+static count property.
+Create Car Class (inherits from Engine class)
+Class constructor will take top, left and (image source reference) as source property
+value
+Class methods:
+a- Top-> setter for top property
+b- Left-> setter for left property
+c- moveLeft-> to move the ball left on page
+d- moveRight->to move the ball right on page
+e- ChangeStyle-> method that take css style object as input to apply it on
+the car.
+f- Create moveCar(direction) that take the direction of moving car on
+screen and the car will start moving until it reaches the page boundreis
+left or right depending on the direction.
+BONUS
+Draw it in HTML
+
+# JavaScript_Lab6
+
+1- Your assignment contains 3 files: carmodule.js , flyingcarmodule.js
+and base module.js
+a- car.js module
+contains Car class with the following properties:
+a- Model (“pmw”,”picanto” and so on)
+b- Year
+c- toString Function that’s print car’s data(model,year)
+Export the class
+b- FlyCar.js module
+contains FlyingCar class that inherits from car and has property
+canFly(TRUE) FlyigCar Class has toString Function that call parent
+function and prints “I
+can Fly”
+Export the class
+c- Base.js module
+Create FlyinCar object and calling toString function
+2- use Fetch method to get data from this api
+https://jsonplaceholder.typicode.com/users
+To get data asynchronously from the API and display the Result on
+HTML table
+a- You don’t know columns’ names in code so keep your code generic
+b- Display the following Coulmns in table
+1- UserName
+2- email
+3- Company Name
+4- Address geo (address GeoLocation)
+5- show users posts’ titles as ul list in this column and show how
+many comments are made by each post.

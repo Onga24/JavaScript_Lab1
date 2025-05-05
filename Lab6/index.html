@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Data </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .error {
+            color: red;
+            padding: 20px;
+            border: 1px solid #ffcccc;
+            background-color: #ffeeee;
+        }
+        #loading {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Data with Posts: </h1>
+    <div id="content"></div>
+    
+    <script type="module" src="./Base.js" defer></script>
+</body>
+</html>
